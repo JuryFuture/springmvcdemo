@@ -15,4 +15,8 @@ import java.lang.annotation.Target;
 @Target({FIELD,METHOD,CONSTRUCTOR,PARAMETER})
 @Retention(RUNTIME)
 public @interface NotNull {
+    /**
+     * 属性名
+     */
+    public String value();
 }
