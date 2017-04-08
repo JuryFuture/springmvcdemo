@@ -27,11 +27,11 @@ public class UserController {
             }
 
         }
-        return user.getName().getName();
+        return user.getNames().toString();
     }
 
     @RequestMapping(value = "/saveUser/")
-    private String saveUser(@FormIncludeJson User user) {
-        return user.getName().toString();
+    private User saveUser(@FormIncludeJson User user) {
+        return user;
     }
 }

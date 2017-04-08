@@ -1,9 +1,11 @@
 package com.example.entity;
 
-import com.example.validation.annotation.JsonObj;
+import java.util.List;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+
+import com.example.validation.annotation.JsonArr;
 
 /**
  * @Description:
@@ -11,33 +13,39 @@ import javax.validation.constraints.NotNull;
  * @Date 2017/2/17 14:29
  */
 public class User {
-    @Valid
-    @JsonObj(typeName = "com.example.entity.Name")
-    private Name name;
-    @NotNull(message = "密码不允许为空")
-    private String passWord;
+	@Valid
+	@JsonArr(typeName = "com.example.entity.Name")
+	private List<Name> names;
+	@NotNull(message = "密码不允许为空")
+	private String passWord;
+	private int age;
 
-    public Name getName() {
-        return name;
-    }
+	public List<Name> getNames() {
+		return names;
+	}
 
-    public void setName(Name name) {
-        this.name = name;
-    }
+	public void setNames(List<Name> names) {
+		this.names = names;
+	}
 
-    public String getPassWord() {
-        return passWord;
-    }
+	public String getPassWord() {
+		return passWord;
+	}
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "name=" + name +
-                ", passWord='" + passWord + '\'' +
-                '}';
-    }
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" + "names=" + names + ", passWord='" + passWord + '\'' + ", age=" + age + '}';
+	}
 }
