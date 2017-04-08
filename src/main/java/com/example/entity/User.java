@@ -1,5 +1,7 @@
 package com.example.entity;
 
+import com.example.validation.annotation.JsonObj;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -10,6 +12,7 @@ import javax.validation.constraints.NotNull;
  */
 public class User {
     @Valid
+    @JsonObj(typeName = "com.example.entity.Name")
     private Name name;
     @NotNull(message = "密码不允许为空")
     private String passWord;

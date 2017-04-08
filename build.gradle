@@ -19,7 +19,7 @@ jar {
 	version = '0.0.1-SNAPSHOT'
 }
 
-sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -29,5 +29,7 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.apache.commons:commons-lang3:3.4")
+	compile("org.apache.commons:commons-collections4:4.0")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile("com.google.code.gson:gson:2.3.1")
 }
