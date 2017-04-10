@@ -1,4 +1,4 @@
-package com.example.validation.annotation;
+package com.example.annotation;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;

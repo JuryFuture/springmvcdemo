@@ -1,10 +1,9 @@
 package com.example.controller;
 
 import com.example.entity.User;
-import com.example.validation.annotation.FormIncludeJson;
+import com.example.annotation.FormIncludeJson;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

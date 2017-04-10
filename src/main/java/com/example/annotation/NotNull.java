@@ -1,4 +1,4 @@
-package com.example.validation.annotation;
+package com.example.annotation;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
@@ -14,5 +14,9 @@ import java.lang.annotation.Target;
  */
 @Target({FIELD,METHOD,CONSTRUCTOR,PARAMETER})
 @Retention(RUNTIME)
-public @interface Match {
+public @interface NotNull {
+    /**
+     * 属性名
+     */
+    public String value();
 }

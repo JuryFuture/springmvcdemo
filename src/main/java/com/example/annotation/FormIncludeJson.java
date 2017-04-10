@@ -1,4 +1,4 @@
-package com.example.validation.annotation;
+package com.example.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,14 +9,9 @@ import java.lang.annotation.Target;
  * Description:
  *
  * @author: tengguodong
- * @date: 2017/4/8
+ * @date: 2017/4/6
  */
-@Target(ElementType.FIELD)
+@Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface JsonArr {
-    String message() default "";
-
-    String paramName() default "";
-
-    String typeName() default "";
+public @interface FormIncludeJson {
 }

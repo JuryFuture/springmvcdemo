@@ -5,7 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-import com.example.validation.annotation.JsonArr;
+import com.example.annotation.JsonArr;
 
 /**
  * @Description:

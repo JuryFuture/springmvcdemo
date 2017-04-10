@@ -1,6 +1,6 @@
-package com.example.validation.annotation.test;
+package com.example.validation.test;
 
-import com.example.validation.annotation.NotNull;
+import com.example.annotation.NotNull;
 
 /**
  * @Description:

@@ -10,34 +10,30 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.example.utils.GsonUtils;
-import com.example.utils.StringUtil;
-import com.example.validation.annotation.JsonArr;
-import com.example.validation.annotation.JsonObj;
-import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyValues;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindException;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.support.WebDataBinderFactory;
-import org.springframework.web.bind.support.WebRequestDataBinder;
 import org.springframework.web.context.request.NativeWebRequest;
-import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.ModelFactory;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import com.example.validation.annotation.FormIncludeJson;
-import org.springframework.web.multipart.MultipartRequest;
+import com.example.utils.GsonUtils;
+import com.example.utils.StringUtil;
+import com.example.annotation.FormIncludeJson;
+import com.example.annotation.JsonArr;
+import com.example.annotation.JsonObj;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 
 /**
  * Description:
@@ -188,15 +184,6 @@ public class CustomArgumentResolver implements HandlerMethodArgumentResolver {
 	protected void bindRequestParameters(WebDataBinder binder, Map<String, String[]> map) {
 		PropertyValues propertyValues = new MutablePropertyValues(map);
 		binder.bind(propertyValues);
-	}
-
-	/**
-	 * Check if the request is a multipart request (by checking its Content-Type header).
-	 * @param request request with parameters to bind
-	 */
-	private boolean isMultipartRequest(WebRequest request) {
-		String contentType = request.getHeader("Content-Type");
-		return (contentType != null && StringUtils.startsWithIgnoreCase(contentType, "multipart"));
 	}
 
 	/**
